@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop premium Indian casual clothing - Browse our collection of heritage prints, basics, and seasonal collections">
+    <title>Shop - The Bharat Collections</title>
+    
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">BHARAT</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                🛒
+                <span class="cart-count">0</span>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span class="active">Shop</span>
+    </div>
+
+    <!-- ===== SHOP SECTION ===== -->
+    <section class="section">
+        <div class="container">
+            <div style="margin-bottom: 40px;">
+                <h1>Our Collection</h1>
+                <p style="color: var(--text-light); margin-top: 10px;">Discover premium casual wear celebrating Indian heritage</p>
+            </div>
+
+            <!-- FILTERS & SORTING -->
+            <div style="display: grid; grid-template-columns: 250px 1fr; gap: 30px; margin-bottom: 40px;">
+                
+                <!-- SIDEBAR FILTERS -->
+                <aside>
+                    <div class="filters">
+                        <div class="filter-group">
+                            <h4 class="filter-title">Categories</h4>
+                            <div class="filter-options" style="flex-direction: column;">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="mens" onchange="applyFilters()">
+                                    <span>Men's Wear</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="womens" onchange="applyFilters()">
+                                    <span>Women's Wear</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="unisex" onchange="applyFilters()">
+                                    <span>Unisex</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4 class="filter-title">Collection</h4>
+                            <div class="filter-options" style="flex-direction: column;">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="heritage" onchange="applyFilters()">
+                                    <span>Heritage Prints</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="basics" onchange="applyFilters()">
+                                    <span>Classic Basics</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="summer" onchange="applyFilters()">
+                                    <span>Summer Vibes</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4 class="filter-title">Price Range</h4>
+                            <div class="filter-options" style="flex-direction: column;">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="under-999" onchange="applyFilters()">
+                                    <span>Under ₹999</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="1000-1999" onchange="applyFilters()">
+                                    <span>₹1,000 - ₹1,999</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="2000-above" onchange="applyFilters()">
+                                    <span>₹2,000+</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- PRODUCTS GRID -->
+                <main>
+                    <!-- SORT OPTIONS -->
+                    <div style="margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                        <p style="font-size: 0.95rem; color: var(--text-light);">Showing <span id="product-count">12</span> products</p>
+                        <select onchange="sortProducts(this.value)" style="padding: 10px 15px; border: 2px solid var(--border-light); border-radius: 6px; font-size: 0.9rem; cursor: pointer;">
+                            <option value="">Sort by</option>
+                            <option value="newest">Newest</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name-asc">Name: A to Z</option>
+                        </select>
+                    </div>
+
+                    <!-- PRODUCTS -->
+                    <div class="products-grid">
+                        
+                        <!-- PRODUCT 1 -->
+                        <div class="product-card" data-category="mens,heritage" data-price="1299">
+                            <div class="product-image">👕
+                                <span class="badge">NEW</span>
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Men's Wear</p>
+                                <h4 class="product-name">Heritage Print T-Shirt</h4>
+                                <p class="product-description">Premium cotton with traditional Madhubani art print</p>
+                                <p class="product-sku">SKU: BHRT-001-M</p>
+                                <p class="product-price">₹1,299</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-001-M" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-001-M', 'Heritage Print T-Shirt', 1299)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 2 -->
+                        <div class="product-card" data-category="womens,heritage" data-price="1599">
+                            <div class="product-image">👗</div>
+                            <div class="product-info">
+                                <p class="product-category">Women's Wear</p>
+                                <h4 class="product-name">Indigo Block Print Kurti</h4>
+                                <p class="product-description">Comfortable kurta with hand-block printed designs</p>
+                                <p class="product-sku">SKU: BHRT-002-W</p>
+                                <p class="product-price">₹1,599</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-002-W" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-002-W', 'Indigo Block Print Kurti', 1599)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 3 -->
+                        <div class="product-card" data-category="unisex,basics" data-price="899">
+                            <div class="product-image">👕</div>
+                            <div class="product-info">
+                                <p class="product-category">Unisex</p>
+                                <h4 class="product-name">Essential White Basics</h4>
+                                <p class="product-description">Timeless white premium cotton t-shirt</p>
+                                <p class="product-sku">SKU: BHRT-003-U</p>
+                                <p class="product-price">₹899</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-003-U" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-003-U', 'Essential White Basics', 899)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 4 -->
+                        <div class="product-card" data-category="mens,summer" data-price="1199">
+                            <div class="product-image">👔</div>
+                            <div class="product-info">
+                                <p class="product-category">Men's Wear</p>
+                                <h4 class="product-name">Breathable Summer Shirt</h4>
+                                <p class="product-description">Lightweight linen blend for ultimate comfort</p>
+                                <p class="product-sku">SKU: BHRT-004-M</p>
+                                <p class="product-price">₹1,199</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-004-M" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-004-M', 'Breathable Summer Shirt', 1199)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 5 -->
+                        <div class="product-card" data-category="womens,summer" data-price="1399">
+                            <div class="product-image">👗</div>
+                            <div class="product-info">
+                                <p class="product-category">Women's Wear</p>
+                                <h4 class="product-name">Flowy Summer Dress</h4>
+                                <p class="product-description">Breathable fabric perfect for warm weather styling</p>
+                                <p class="product-sku">SKU: BHRT-005-W</p>
+                                <p class="product-price">₹1,399</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-005-W" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-005-W', 'Flowy Summer Dress', 1399)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 6 -->
+                        <div class="product-card" data-category="unisex,basics" data-price="1099">
+                            <div class="product-image">👕</div>
+                            <div class="product-info">
+                                <p class="product-category">Unisex</p>
+                                <h4 class="product-name">Charcoal Grey Essential</h4>
+                                <p class="product-description">Versatile grey tee for everyday wear</p>
+                                <p class="product-sku">SKU: BHRT-006-U</p>
+                                <p class="product-price">₹1,099</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-006-U" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-006-U', 'Charcoal Grey Essential', 1099)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 7 -->
+                        <div class="product-card" data-category="mens,heritage" data-price="1799">
+                            <div class="product-image">👔</div>
+                            <div class="product-info">
+                                <p class="product-category">Men's Wear</p>
+                                <h4 class="product-name">Paisley Pattern Shirt</h4>
+                                <p class="product-description">Traditional paisley in contemporary cut</p>
+                                <p class="product-sku">SKU: BHRT-007-M</p>
+                                <p class="product-price">₹1,799</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-007-M" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-007-M', 'Paisley Pattern Shirt', 1799)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 8 -->
+                        <div class="product-card" data-category="womens,basics" data-price="1299">
+                            <div class="product-image">👗</div>
+                            <div class="product-info">
+                                <p class="product-category">Women's Wear</p>
+                                <h4 class="product-name">Classic Black Top</h4>
+                                <p class="product-description">Elegant and timeless basic black top</p>
+                                <p class="product-sku">SKU: BHRT-008-W</p>
+                                <p class="product-price">₹1,299</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-008-W" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-008-W', 'Classic Black Top', 1299)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 9 -->
+                        <div class="product-card" data-category="unisex,heritage" data-price="2099">
+                            <div class="product-image">👕</div>
+                            <div class="product-info">
+                                <p class="product-category">Unisex</p>
+                                <h4 class="product-name">Premium Batik T-Shirt</h4>
+                                <p class="product-description">Authentic batik print on organic cotton</p>
+                                <p class="product-sku">SKU: BHRT-009-U</p>
+                                <p class="product-price">₹2,099</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-009-U" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-009-U', 'Premium Batik T-Shirt', 2099)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 10 -->
+                        <div class="product-card" data-category="mens,basics" data-price="999">
+                            <div class="product-image">👕</div>
+                            <div class="product-info">
+                                <p class="product-category">Men's Wear</p>
+                                <h4 class="product-name">Navy Blue Casual</h4>
+                                <p class="product-description">Comfortable navy blue basic wear</p>
+                                <p class="product-sku">SKU: BHRT-010-M</p>
+                                <p class="product-price">₹999</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-010-M" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-010-M', 'Navy Blue Casual', 999)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 11 -->
+                        <div class="product-card" data-category="womens,heritage" data-price="1899">
+                            <div class="product-image">👗</div>
+                            <div class="product-info">
+                                <p class="product-category">Women's Wear</p>
+                                <h4 class="product-name">Embroidered Kurta</h4>
+                                <p class="product-description">Hand-embroidered traditional kurta</p>
+                                <p class="product-sku">SKU: BHRT-011-W</p>
+                                <p class="product-price">₹1,899</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-011-W" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-011-W', 'Embroidered Kurta', 1899)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUCT 12 -->
+                        <div class="product-card" data-category="unisex,summer" data-price="1499">
+                            <div class="product-image">👕</div>
+                            <div class="product-info">
+                                <p class="product-category">Unisex</p>
+                                <h4 class="product-name">Tropical Print Shirt</h4>
+                                <p class="product-description">Vibrant tropical design for summer</p>
+                                <p class="product-sku">SKU: BHRT-012-U</p>
+                                <p class="product-price">₹1,499</p>
+                                <div class="product-actions">
+                                    <a href="product-detail.html?sku=BHRT-012-U" class="btn btn-outline" style="flex: 1;">View</a>
+                                    <button class="btn btn-primary" onclick="addToCart('BHRT-012-U', 'Tropical Print Shirt', 1499)" style="flex: 1;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>The Bharat Collections</h4>
+                <p>Premium casual clothing celebrating Indian heritage with contemporary style.</p>
+                <div class="social-links">
+                    <a href="#" title="Instagram">📱</a>
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Manufacturing Partner</h4>
+                <p>In partnership with <strong>Qikink</strong> for seamless fulfillment and quality assurance.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Bharat Collections. All rights reserved. Proudly Indian, Globally Inspired.</p>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="/static/script.js"></script>
+</body>
+</html>

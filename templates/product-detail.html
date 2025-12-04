@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Indian casual wear - Detailed product information, sizing, and ordering">
+    <title>Product Details - The Bharat Collections</title>
+    
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">BHARAT</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                🛒
+                <span class="cart-count">0</span>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="shop.html">Shop</a>
+        <span>/</span>
+        <span class="active" id="breadcrumb-product">Product</span>
+    </div>
+
+    <!-- ===== PRODUCT DETAIL ===== -->
+    <section class="product-detail">
+        <div class="product-detail-container">
+            <!-- PRODUCT IMAGE -->
+            <div class="product-detail-image">👕</div>
+
+            <!-- PRODUCT INFO -->
+            <div class="product-detail-info">
+                <h1 id="product-name">Heritage Print T-Shirt</h1>
+                
+                <div class="product-meta">
+                    <div class="product-rating">
+                        <div class="stars">★★★★★</div>
+                        <span style="color: var(--text-light); font-size: 0.9rem;">(245 reviews)</span>
+                    </div>
+                </div>
+
+                <div class="product-sku-detail">
+                    <strong>SKU:</strong> <span id="product-sku">BHRT-001-M</span>
+                </div>
+
+                <div class="product-price-detail" id="product-price">₹1,299</div>
+
+                <div class="product-stock in-stock">
+                    ✓ In Stock - <span id="stock-count">15</span> items available
+                </div>
+
+                <p class="product-description-detail" id="product-description">
+                    Premium 100% cotton t-shirt with traditional Madhubani art print. This piece celebrates Indian heritage with contemporary comfort. Perfect for casual wear or layering.
+                </p>
+
+                <!-- SIZE SELECTION -->
+                <div class="product-options">
+                    <div class="option-group">
+                        <label>Size</label>
+                        <div class="size-options">
+                            <button class="size-option" onclick="selectSize(this, 'product')">XS</button>
+                            <button class="size-option" onclick="selectSize(this, 'product')">S</button>
+                            <button class="size-option selected" onclick="selectSize(this, 'product')">M</button>
+                            <button class="size-option" onclick="selectSize(this, 'product')">L</button>
+                            <button class="size-option" onclick="selectSize(this, 'product')">XL</button>
+                            <button class="size-option" onclick="selectSize(this, 'product')">XXL</button>
+                        </div>
+                    </div>
+
+                    <!-- COLOR SELECTION -->
+                    <div class="option-group">
+                        <label>Color</label>
+                        <div class="color-options">
+                            <button class="color-option selected" onclick="selectColor(this, 'product')" data-color="cream">
+                                <div class="color-swatch" style="background-color: #FFF8E7;"></div>
+                            </button>
+                            <button class="color-option" onclick="selectColor(this, 'product')" data-color="grey">
+                                <div class="color-swatch" style="background-color: #CCCCCC;"></div>
+                            </button>
+                            <button class="color-option" onclick="selectColor(this, 'product')" data-color="black">
+                                <div class="color-swatch" style="background-color: #1A1A1A;"></div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- QUANTITY -->
+                    <div class="option-group">
+                        <label>Quantity</label>
+                        <div style="display: flex; align-items: center; gap: 10px; max-width: 150px;">
+                            <button onclick="decreaseQuantity()" style="padding: 8px 12px; border: 2px solid var(--border-light); background: none; cursor: pointer; border-radius: 4px; font-weight: 600;">−</button>
+                            <input type="number" id="quantity-input" class="quantity-input" value="1" min="1" max="10" style="width: 50px; padding: 8px; text-align: center; border: 2px solid var(--border-light); border-radius: 4px; font-size: 1rem;">
+                            <button onclick="increaseQuantity()" style="padding: 8px 12px; border: 2px solid var(--border-light); background: none; cursor: pointer; border-radius: 4px; font-weight: 600;">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACTION BUTTONS -->
+                <div class="product-detail-buttons">
+                    <button class="btn btn-primary" onclick="handleAddToCart()">Add to Cart</button>
+                    <button class="btn btn-outline" onclick="toggleWishlist()">♥ Wishlist</button>
+                </div>
+
+                <!-- FEATURES -->
+                <div style="background-color: var(--background-light); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 12px;">Product Features</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding-left: 25px; position: relative; margin-bottom: 10px;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">✓</span>
+                            100% Premium Cotton
+                        </li>
+                        <li style="padding-left: 25px; position: relative; margin-bottom: 10px;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">✓</span>
+                            Hand-Printed Design
+                        </li>
+                        <li style="padding-left: 25px; position: relative; margin-bottom: 10px;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">✓</span>
+                            Soft & Breathable
+                        </li>
+                        <li style="padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">✓</span>
+                            Sustainable Manufacturing
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- QIKINK INFO -->
+                <div class="product-qikink-info">
+                    <strong style="color: var(--secondary-accent);">✓ Fulfilled by Qikink</strong><br>
+                    Guaranteed quality, authentic product, fast pan-India delivery. Track your order in real-time.
+                </div>
+            </div>
+        </div>
+
+        <!-- ADDITIONAL INFO TABS -->
+        <div style="max-width: 1000px; margin: 60px auto;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                
+                <!-- SIZE GUIDE -->
+                <div style="background-color: var(--white); padding: 25px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">Size Guide</h3>
+                    <table style="width: 100%; font-size: 0.9rem; border-collapse: collapse;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 8px 0; font-weight: 600;">Size</td>
+                            <td style="padding: 8px 0; font-weight: 600; text-align: right;">Chest (cm)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 8px 0;">XS</td>
+                            <td style="padding: 8px 0; text-align: right;">34-36</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 8px 0;">S</td>
+                            <td style="padding: 8px 0; text-align: right;">36-38</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 8px 0;">M</td>
+                            <td style="padding: 8px 0; text-align: right;">38-40</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 8px 0;">L</td>
+                            <td style="padding: 8px 0; text-align: right;">40-42</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 8px 0;">XL</td>
+                            <td style="padding: 8px 0; text-align: right;">42-44</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 0;">XXL</td>
+                            <td style="padding: 8px 0; text-align: right;">44-46</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- CARE INSTRUCTIONS -->
+                <div style="background-color: var(--white); padding: 25px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">Care Instructions</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                        <li style="margin-bottom: 10px;">🌡️ Wash in cold water (30°C)</li>
+                        <li style="margin-bottom: 10px;">🧼 Use mild detergent</li>
+                        <li style="margin-bottom: 10px;">♻️ Machine wash - gentle cycle</li>
+                        <li style="margin-bottom: 10px;">☀️ Dry in shade</li>
+                        <li style="margin-bottom: 10px;">🔥 Low heat ironing if needed</li>
+                        <li>❌ Avoid bleach</li>
+                    </ul>
+                </div>
+
+                <!-- SHIPPING & RETURNS -->
+                <div style="background-color: var(--white); padding: 25px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">Shipping & Returns</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                        <li style="margin-bottom: 10px;">📦 Free shipping pan-India</li>
+                        <li style="margin-bottom: 10px;">🚚 Delivery in 3-5 business days</li>
+                        <li style="margin-bottom: 10px;">💯 7-day returns policy</li>
+                        <li style="margin-bottom: 10px;">✓ Hassle-free exchange</li>
+                        <li style="margin-bottom: 10px;">🔄 Easy return process</li>
+                        <li>💳 Full refund</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RELATED PRODUCTS -->
+        <div style="max-width: 1000px; margin: 60px auto;">
+            <h2 style="text-align: center; margin-bottom: 40px;">You Might Also Like</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                <div class="product-card" data-price="1599">
+                    <div class="product-image">👗</div>
+                    <div class="product-info">
+                        <p class="product-category">Women's Wear</p>
+                        <h4 class="product-name">Indigo Block Print Kurti</h4>
+                        <p class="product-description">Comfortable kurta with hand-block printed designs</p>
+                        <p class="product-price">₹1,599</p>
+                        <button class="btn btn-primary" style="width: 100%;">View Details</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-price="899">
+                    <div class="product-image">👕</div>
+                    <div class="product-info">
+                        <p class="product-category">Unisex</p>
+                        <h4 class="product-name">Essential White Basics</h4>
+                        <p class="product-description">Timeless white premium cotton t-shirt</p>
+                        <p class="product-price">₹899</p>
+                        <button class="btn btn-primary" style="width: 100%;">View Details</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-price="2099">
+                    <div class="product-image">👕</div>
+                    <div class="product-info">
+                        <p class="product-category">Unisex</p>
+                        <h4 class="product-name">Premium Batik T-Shirt</h4>
+                        <p class="product-description">Authentic batik print on organic cotton</p>
+                        <p class="product-price">₹2,099</p>
+                        <button class="btn btn-primary" style="width: 100%;">View Details</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-price="1799">
+                    <div class="product-image">👔</div>
+                    <div class="product-info">
+                        <p class="product-category">Men's Wear</p>
+                        <h4 class="product-name">Paisley Pattern Shirt</h4>
+                        <p class="product-description">Traditional paisley in contemporary cut</p>
+                        <p class="product-price">₹1,799</p>
+                        <button class="btn btn-primary" style="width: 100%;">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>The Bharat Collections</h4>
+                <p>Premium casual clothing celebrating Indian heritage with contemporary style.</p>
+                <div class="social-links">
+                    <a href="#" title="Instagram">📱</a>
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Manufacturing Partner</h4>
+                <p>In partnership with <strong>Qikink</strong> for seamless fulfillment and quality assurance.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Bharat Collections. All rights reserved. Proudly Indian, Globally Inspired.</p>
+        </div>
+    </footer>
+
+    <!-- ===== PRODUCT DETAIL SCRIPT ===== -->
+    <script>
+        function increaseQuantity() {
+            const input = document.getElementById('quantity-input');
+            input.value = Math.min(parseInt(input.value) + 1, 10);
+        }
+
+        function decreaseQuantity() {
+            const input = document.getElementById('quantity-input');
+            input.value = Math.max(parseInt(input.value) - 1, 1);
+        }
+
+        function handleAddToCart() {
+            const qty = document.getElementById('quantity-input').value;
+            const sku = document.getElementById('product-sku').textContent;
+            const name = document.getElementById('product-name').textContent;
+            const price = parseFloat(document.getElementById('product-price').textContent.replace('₹', '').replace(',', ''));
+            
+            for (let i = 0; i < parseInt(qty); i++) {
+                addToCart(sku, name, price);
+            }
+        }
+
+        function toggleWishlist() {
+            const sku = document.getElementById('product-sku').textContent;
+            const name = document.getElementById('product-name').textContent;
+            addToWishlist(sku, name);
+        }
+
+        // Get SKU from URL and load product
+        async function loadProductFromBackend() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sku = urlParams.get('sku');
+
+            if (!sku) {
+                console.error('No SKU provided');
+                return;
+            }
+
+            const product = await fetchProductBySku(sku);
+            
+            if (product) {
+                // Update product details
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-sku').textContent = product.sku;
+                document.getElementById('product-price').textContent = `₹${product.price.toLocaleString('en-IN')}`;
+                document.getElementById('stock-count').textContent = product.stock;
+                document.getElementById('product-description').textContent = product.description;
+                document.getElementById('breadcrumb-product').textContent = product.name;
+
+                // Update stock status
+                const stockStatus = document.querySelector('.product-stock');
+                if (product.stock > 0) {
+                    stockStatus.className = 'product-stock in-stock';
+                    stockStatus.innerHTML = `✓ In Stock - <span id="stock-count">${product.stock}</span> items available`;
+                } else {
+                    stockStatus.className = 'product-stock out-of-stock';
+                    stockStatus.textContent = '✗ Out of Stock';
+                    document.querySelector('button[onclick="handleAddToCart()"]').disabled = true;
+                }
+
+                // Update available sizes
+                const sizeButtons = document.querySelectorAll('.size-option');
+                sizeButtons.forEach((btn, index) => {
+                    if (product.sizes && index < product.sizes.length) {
+                        btn.textContent = product.sizes[index];
+                    }
+                });
+
+                // Update colors
+                const colorButtons = document.querySelectorAll('.color-option');
+                const colors = {
+                    'cream': '#FFF8E7',
+                    'grey': '#CCCCCC',
+                    'black': '#1a1a1a',
+                    'indigo': '#4B0082',
+                    'white': '#FFFFFF'
+                };
+
+                colorButtons.forEach((btn, index) => {
+                    if (product.colors && index < product.colors.length) {
+                        const color = product.colors[index];
+                        btn.setAttribute('data-color', color);
+                        btn.querySelector('.color-swatch').style.backgroundColor = colors[color] || '#CCCCCC';
+                    }
+                });
+            }
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadProductFromBackend();
+            selectSize(document.querySelector('.size-option.selected'), 'product');
+            selectColor(document.querySelector('.color-option.selected'), 'product');
+        });
+    </script>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
