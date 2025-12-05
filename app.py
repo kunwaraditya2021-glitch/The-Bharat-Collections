@@ -17,8 +17,8 @@ import base64
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Get the parent directory (project root)
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Get the project root directory (app.py is now in root)
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Initialize Flask with custom static and template paths
 app = Flask(__name__, 
