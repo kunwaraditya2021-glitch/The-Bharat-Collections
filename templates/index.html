@@ -9,13 +9,15 @@
     <title>The Bharat Collections - Premium Indian Casual Wear</title>
     
     <link rel="stylesheet" href="/static/styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%237BA395'>⚡</text></svg>">
+    <link rel="icon" type="image/x-icon" href="/static/images/भारत_converted.ico">
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
+    <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="/" class="logo">BHARAT</a>
+            <a href="/" class="logo">
+                <img src="/static/images/भारत.png" alt="The Bharat Collections Logo" class="logo-image">
+            </a>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -25,9 +27,29 @@
                     <li><a href="faq.html">FAQs</a></li>
                 </ul>
             </nav>
-            <div class="cart-icon">
-                🛒
-                <span class="cart-count">0</span>
+            <div class="header-actions">
+                <form class="navbar-search" action="#" method="get">
+                    <input type="text" class="search-input" placeholder="Search..." name="q" aria-label="Search">
+                    <button type="submit" class="search-btn" aria-label="Search">
+                        <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                            <circle cx="9" cy="9" r="7" stroke="#7BA395" stroke-width="2"/>
+                            <line x1="15" y1="15" x2="19" y2="19" stroke="#7BA395" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <button class="account-btn" type="button" aria-label="Account">
+                    <svg class="account-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                        <circle cx="10" cy="7" r="4" stroke="#7BA395" stroke-width="2"/>
+                        <path d="M3 17c0-2.5 3-4 7-4s7 1.5 7 4" stroke="#7BA395" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="account-label">Account</span>
+                </button>
+
+                <div class="cart-icon">
+                    🛒
+                    <span class="cart-count">0</span>
+                </div>
             </div>
             <div class="menu-toggle">
                 <span></span>
@@ -39,6 +61,9 @@
 
     <!-- ===== HERO SECTION ===== -->
     <section class="hero" id="home">
+        <div class="hero-banner-overlay">
+            <img src="/static/images/भारत (250 x 250 px).png" alt="Hero Banner" class="hero-banner-image">
+        </div>
         <div class="hero-content">
             <h1>Made for Modern Bharat</h1>
             <p>Premium casual clothing that celebrates Indian heritage with contemporary style. Crafted for comfort, designed for confidence.</p>
@@ -135,13 +160,13 @@
     </section>
 
     <!-- ===== CTA SECTION ===== -->
-    <section class="section" style="background: linear-gradient(135deg, #7BA395 0%, #E38C52 100%); text-align: center; color: white;">
+    <section class="newsletter-section">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 20px;">Join the Bharat Community</h2>
-            <p style="color: rgba(255,255,255,0.9); margin-bottom: 30px; font-size: 1.1rem;">Subscribe to our newsletter for exclusive offers, new launches, and styling tips</p>
-            <form style="max-width: 400px; margin: 0 auto; display: flex; gap: 10px;">
-                <input type="email" placeholder="Enter your email" style="flex: 1; padding: 12px 15px; border: none; border-radius: 6px; font-size: 1rem;">
-                <button type="submit" class="btn btn-primary" style="background-color: white; color: #7BA395; border-color: white; font-weight: 700;">Subscribe</button>
+            <h2 class="newsletter-title">Join the Bharat Community</h2>
+            <p class="newsletter-text">Subscribe to our newsletter for exclusive offers, new launches, and styling tips</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                <button type="submit" class="btn btn-newsletter">Subscribe</button>
             </form>
         </div>
     </section>
@@ -150,6 +175,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="/static/images/भारत.png" alt="The Bharat Collections Logo" class="footer-logo-img">
+                </div>
                 <h4>The Bharat Collections</h4>
                 <p>Premium casual clothing that celebrates Indian heritage with contemporary style. Designed for comfort, crafted with pride.</p>
                 <div class="social-links">

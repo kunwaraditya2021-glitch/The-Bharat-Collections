@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shop premium Indian casual clothing - Browse our collection of heritage prints, basics, and seasonal collections">
+    <meta name="description"
+        content="Shop premium Indian casual clothing - Browse our collection of heritage prints, basics, and seasonal collections">
     <title>Shop - The Bharat Collections</title>
-    
+
     <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/भारत_converted.ico">
 </head>
+
 <body>
-    <!-- ===== HEADER ===== -->
+
     <header>
         <div class="header-container">
-            <a href="/" class="logo">BHARAT</a>
+            <a href="/" class="logo">
+                <img src="/static/images/भारत.png" alt="The Bharat Collections Logo" class="logo-image">
+            </a>
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -34,6 +40,18 @@
         </div>
     </header>
 
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="hero-banner-overlay">
+            <img src="/static/images/भारत (250 x 250 px).png" alt="Hero Banner" class="hero-banner-image">
+        </div>
+        <div class="hero-content">
+            <h1>Our Collection</h1>
+            <p>Discover premium casual wear celebrating Indian heritage</p>
+
+        </div>
+    </section>
+
     <!-- ===== BREADCRUMB ===== -->
     <div class="breadcrumb">
         <a href="/">Home</a>
@@ -41,95 +59,85 @@
         <span class="active">Shop</span>
     </div>
 
-    <!-- ===== SHOP SECTION ===== -->
     <section class="section">
         <div class="container">
+
             <div style="margin-bottom: 40px;">
-                <h1>Our Collection</h1>
-                <p style="color: var(--text-light); margin-top: 10px;">Discover premium casual wear celebrating Indian heritage</p>
-            </div>
-
-            <!-- FILTERS & SORTING -->
-            <div style="display: grid; grid-template-columns: 250px 1fr; gap: 30px; margin-bottom: 40px;">
-                
-                <!-- SIDEBAR FILTERS -->
-                <aside>
-                    <div class="filters">
-                        <div class="filter-group">
-                            <h4 class="filter-title">Categories</h4>
-                            <div class="filter-options" style="flex-direction: column;">
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="mens" onchange="applyFilters()">
-                                    <span>Men's Wear</span>
-                                </label>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="womens" onchange="applyFilters()">
-                                    <span>Women's Wear</span>
-                                </label>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="unisex" onchange="applyFilters()">
-                                    <span>Unisex</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="filter-group">
-                            <h4 class="filter-title">Collection</h4>
-                            <div class="filter-options" style="flex-direction: column;">
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="heritage" onchange="applyFilters()">
-                                    <span>Heritage Prints</span>
-                                </label>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="basics" onchange="applyFilters()">
-                                    <span>Classic Basics</span>
-                                </label>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="summer" onchange="applyFilters()">
-                                    <span>Summer Vibes</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="filter-group">
-                            <h4 class="filter-title">Price Range</h4>
-                            <div class="filter-options" style="flex-direction: column;">
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="under-999" onchange="applyFilters()">
-                                    <span>Under ₹999</span>
-                                </label>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="1000-1999" onchange="applyFilters()">
-                                    <span>₹1,000 - ₹1,999</span>
-                                </label>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="2000-above" onchange="applyFilters()">
-                                    <span>₹2,000+</span>
-                                </label>
-                            </div>
+                <!-- Horizontal Filter Bar with Hover Dropdowns -->
+                <div class="filters-horizontal">
+                    <div class="filter-dropdown">
+                        <button class="filter-dropdown-toggle">Collection</button>
+                        <div class="filter-dropdown-menu">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="heritage" onchange="applyFilters()">
+                                <span>Heritage Prints</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="basics" onchange="applyFilters()">
+                                <span>Classic Basics</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="summer" onchange="applyFilters()">
+                                <span>Summer Vibes</span>
+                            </label>
                         </div>
                     </div>
-                </aside>
 
-                <!-- PRODUCTS GRID -->
+                    <div class="filter-dropdown">
+                        <button class="filter-dropdown-toggle">Price Range</button>
+                        <div class="filter-dropdown-menu">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="under-999" onchange="applyFilters()">
+                                <span>Under ₹999</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="1000-1999" onchange="applyFilters()">
+                                <span>₹1,000 - ₹1,999</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="2000-above" onchange="applyFilters()">
+                                <span>₹2,000+</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-dropdown">
+                        <button class="filter-dropdown-toggle">Categories</button>
+                        <div class="filter-dropdown-menu">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="mens" onchange="applyFilters()">
+                                <span>Men's Wear</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="womens" onchange="applyFilters()">
+                                <span>Women's Wear</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="unisex" onchange="applyFilters()">
+                                <span>Unisex</span>
+                            </label>
+                        </div>
+                    </div>
+                    <select class="sort-select" onchange="sortProducts(this.value)">
+                        <option value="">Sort by</option>
+                        <option value="newest">Newest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                    </select>
+                </div>
+
+
                 <main>
-                    <!-- SORT OPTIONS -->
-                    <div style="margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-                        <p style="font-size: 0.95rem; color: var(--text-light);">Showing <span id="product-count">12</span> products</p>
-                        <select onchange="sortProducts(this.value)" style="padding: 10px 15px; border: 2px solid var(--border-light); border-radius: 6px; font-size: 0.9rem; cursor: pointer;">
-                            <option value="">Sort by</option>
-                            <option value="newest">Newest</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="name-asc">Name: A to Z</option>
-                        </select>
+                    <div
+                        style="margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                        <p style="font-size: 0.95rem; color: var(--text-light);">Showing <span
+                                id="product-count">12</span> products</p>
                     </div>
 
-                    <!-- PRODUCTS -->
                     <div class="products-grid">
-                        
-                        <!-- PRODUCT 1 -->
-                        <div class="product-card" data-category="mens,heritage" data-price="1299">
+
+                        <!-- <div class="product-card" data-category="mens,heritage" data-price="1299">
                             <div class="product-image">👕
                                 <span class="badge">NEW</span>
                             </div>
@@ -140,13 +148,15 @@
                                 <p class="product-sku">SKU: BHRT-001-M</p>
                                 <p class="product-price">₹1,299</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-001-M" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-001-M', 'Heritage Print T-Shirt', 1299)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-001-M" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-001-M', 'Heritage Print T-Shirt', 1299)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 2 -->
                         <div class="product-card" data-category="womens,heritage" data-price="1599">
                             <div class="product-image">👗</div>
                             <div class="product-info">
@@ -156,13 +166,15 @@
                                 <p class="product-sku">SKU: BHRT-002-W</p>
                                 <p class="product-price">₹1,599</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-002-W" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-002-W', 'Indigo Block Print Kurti', 1599)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-002-W" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-002-W', 'Indigo Block Print Kurti', 1599)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 3 -->
                         <div class="product-card" data-category="unisex,basics" data-price="899">
                             <div class="product-image">👕</div>
                             <div class="product-info">
@@ -172,13 +184,15 @@
                                 <p class="product-sku">SKU: BHRT-003-U</p>
                                 <p class="product-price">₹899</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-003-U" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-003-U', 'Essential White Basics', 899)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-003-U" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-003-U', 'Essential White Basics', 899)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 4 -->
                         <div class="product-card" data-category="mens,summer" data-price="1199">
                             <div class="product-image">👔</div>
                             <div class="product-info">
@@ -188,13 +202,15 @@
                                 <p class="product-sku">SKU: BHRT-004-M</p>
                                 <p class="product-price">₹1,199</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-004-M" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-004-M', 'Breathable Summer Shirt', 1199)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-004-M" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-004-M', 'Breathable Summer Shirt', 1199)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 5 -->
                         <div class="product-card" data-category="womens,summer" data-price="1399">
                             <div class="product-image">👗</div>
                             <div class="product-info">
@@ -204,13 +220,15 @@
                                 <p class="product-sku">SKU: BHRT-005-W</p>
                                 <p class="product-price">₹1,399</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-005-W" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-005-W', 'Flowy Summer Dress', 1399)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-005-W" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-005-W', 'Flowy Summer Dress', 1399)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 6 -->
                         <div class="product-card" data-category="unisex,basics" data-price="1099">
                             <div class="product-image">👕</div>
                             <div class="product-info">
@@ -220,13 +238,15 @@
                                 <p class="product-sku">SKU: BHRT-006-U</p>
                                 <p class="product-price">₹1,099</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-006-U" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-006-U', 'Charcoal Grey Essential', 1099)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-006-U" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-006-U', 'Charcoal Grey Essential', 1099)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 7 -->
                         <div class="product-card" data-category="mens,heritage" data-price="1799">
                             <div class="product-image">👔</div>
                             <div class="product-info">
@@ -236,13 +256,15 @@
                                 <p class="product-sku">SKU: BHRT-007-M</p>
                                 <p class="product-price">₹1,799</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-007-M" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-007-M', 'Paisley Pattern Shirt', 1799)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-007-M" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-007-M', 'Paisley Pattern Shirt', 1799)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 8 -->
                         <div class="product-card" data-category="womens,basics" data-price="1299">
                             <div class="product-image">👗</div>
                             <div class="product-info">
@@ -252,13 +274,15 @@
                                 <p class="product-sku">SKU: BHRT-008-W</p>
                                 <p class="product-price">₹1,299</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-008-W" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-008-W', 'Classic Black Top', 1299)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-008-W" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-008-W', 'Classic Black Top', 1299)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 9 -->
                         <div class="product-card" data-category="unisex,heritage" data-price="2099">
                             <div class="product-image">👕</div>
                             <div class="product-info">
@@ -268,13 +292,15 @@
                                 <p class="product-sku">SKU: BHRT-009-U</p>
                                 <p class="product-price">₹2,099</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-009-U" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-009-U', 'Premium Batik T-Shirt', 2099)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-009-U" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-009-U', 'Premium Batik T-Shirt', 2099)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 10 -->
                         <div class="product-card" data-category="mens,basics" data-price="999">
                             <div class="product-image">👕</div>
                             <div class="product-info">
@@ -284,13 +310,15 @@
                                 <p class="product-sku">SKU: BHRT-010-M</p>
                                 <p class="product-price">₹999</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-010-M" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-010-M', 'Navy Blue Casual', 999)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-010-M" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-010-M', 'Navy Blue Casual', 999)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 11 -->
                         <div class="product-card" data-category="womens,heritage" data-price="1899">
                             <div class="product-image">👗</div>
                             <div class="product-info">
@@ -300,13 +328,15 @@
                                 <p class="product-sku">SKU: BHRT-011-W</p>
                                 <p class="product-price">₹1,899</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-011-W" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-011-W', 'Embroidered Kurta', 1899)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-011-W" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-011-W', 'Embroidered Kurta', 1899)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- PRODUCT 12 -->
                         <div class="product-card" data-category="unisex,summer" data-price="1499">
                             <div class="product-image">👕</div>
                             <div class="product-info">
@@ -316,11 +346,14 @@
                                 <p class="product-sku">SKU: BHRT-012-U</p>
                                 <p class="product-price">₹1,499</p>
                                 <div class="product-actions">
-                                    <a href="product-detail.html?sku=BHRT-012-U" class="btn btn-outline" style="flex: 1;">View</a>
-                                    <button class="btn btn-primary" onclick="addToCart('BHRT-012-U', 'Tropical Print Shirt', 1499)" style="flex: 1;">Add</button>
+                                    <a href="product-detail.html?sku=BHRT-012-U" class="btn btn-outline"
+                                        style="flex: 1;">View</a>
+                                    <button class="btn btn-primary"
+                                        onclick="addToCart('BHRT-012-U', 'Tropical Print Shirt', 1499)"
+                                        style="flex: 1;">Add</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                 </main>
@@ -328,7 +361,6 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -372,7 +404,972 @@
         </div>
     </footer>
 
-    <!-- ===== SCRIPTS ===== -->
     <script src="/static/script.js"></script>
+    <style>
+        .hero {
+            
+            padding: 60px 20px !important;
+           
+        }
+
+        /* ==================== LARGE DESKTOP (1400px+) ==================== */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+            }
+
+            .product-image {
+                height: 280px;
+            }
+        }
+
+        /* ==================== DESKTOP (1200px - 1399px) ==================== */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
+        }
+
+        /* ==================== LARGE TABLET / SMALL DESKTOP (992px - 1199px) ==================== */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .container {
+                max-width: 960px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 22px;
+            }
+
+            .product-image {
+                height: 240px;
+            }
+
+            .product-name {
+                font-size: 1.05rem;
+            }
+
+            .filters-horizontal {
+                gap: 12px;
+            }
+
+            .filter-dropdown-toggle {
+                padding: 11px 16px;
+                font-size: 0.92rem;
+            }
+        }
+
+        /* ==================== TABLET LANDSCAPE (768px - 991px) ==================== */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container {
+                max-width: 720px;
+                padding: 0 20px;
+            }
+
+            /* Navigation */
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: var(--shadow-sm);
+            }
+
+            nav.active {
+                max-height: 400px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            /* Shop Page Layout */
+            .section {
+                padding: 60px 20px;
+            }
+
+            /* Shop Header */
+            .section h1 {
+                font-size: 2.2rem;
+            }
+
+            /* Filters Horizontal */
+            .filters-horizontal {
+                gap: 10px;
+                justify-content: flex-start;
+            }
+
+            .filter-dropdown-toggle {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            .filter-dropdown-menu {
+                min-width: 170px;
+            }
+
+            /* Product Count & Sort Controls */
+            div[style*="display: flex; justify-content: space-between"] {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 15px;
+            }
+
+            div[style*="display: flex; gap: 15px"] select {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            /* Products Grid - 2 columns on tablet landscape */
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .product-card {
+                border-radius: 10px;
+            }
+
+            .product-image {
+                height: 230px;
+            }
+
+            .product-info {
+                padding: 18px;
+            }
+
+            .product-category {
+                font-size: 0.73rem;
+            }
+
+            .product-name {
+                font-size: 1.05rem;
+            }
+
+            .product-description {
+                font-size: 0.82rem;
+            }
+
+            .product-price {
+                font-size: 1.25rem;
+            }
+
+            .product-actions {
+                gap: 8px;
+            }
+
+            .product-actions .btn {
+                padding: 10px 14px;
+                font-size: 0.88rem;
+            }
+
+            /* Collections & Other Sections */
+            .collections-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 22px;
+            }
+
+            .usp-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 22px;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
+        }
+
+        /* ==================== TABLET PORTRAIT (576px - 767px) ==================== */
+        @media (min-width: 576px) and (max-width: 767px) {
+            .container {
+                max-width: 540px;
+                padding: 0 18px;
+            }
+
+            /* Navigation */
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: var(--shadow-sm);
+            }
+
+            nav.active {
+                max-height: 400px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            /* Typography */
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            h3 {
+                font-size: 1.35rem;
+            }
+
+            /* Shop Page */
+            .section {
+                padding: 50px 18px;
+            }
+
+            .section h1 {
+                font-size: 2rem;
+            }
+
+            /* Filters - Stack vertically on smaller tablets */
+            .filters-horizontal {
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .filter-dropdown {
+                flex: 1 1 calc(50% - 5px);
+                min-width: 150px;
+            }
+
+            .filter-dropdown-toggle {
+                width: 100%;
+                padding: 11px 14px;
+                font-size: 0.88rem;
+                justify-content: space-between;
+            }
+
+            .filter-dropdown-menu {
+                min-width: 100%;
+                left: 0;
+                right: 0;
+            }
+
+            /* Sort and Category Selects */
+            div[style*="display: flex; gap: 15px"] {
+                width: 100%;
+                flex-direction: column;
+                gap: 10px !important;
+            }
+
+            div[style*="display: flex; gap: 15px"] select {
+                width: 100%;
+                padding: 11px 14px;
+            }
+
+            /* Products Grid - 2 columns */
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .product-card {
+                border-radius: 10px;
+            }
+
+            .product-image {
+                height: 200px;
+                font-size: 2.2rem;
+            }
+
+            .product-info {
+                padding: 16px;
+            }
+
+            .product-category {
+                font-size: 0.72rem;
+            }
+
+            .product-name {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .product-description {
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+
+            .product-sku {
+                font-size: 0.78rem;
+            }
+
+            .product-price {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            .product-actions {
+                gap: 8px;
+            }
+
+            .product-actions .btn {
+                padding: 9px 12px;
+                font-size: 0.85rem;
+            }
+
+            /* Other Sections */
+            .collections-grid,
+            .testimonials-grid,
+            .usp-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        /* ==================== MOBILE LARGE (480px - 575px) ==================== */
+        @media (min-width: 480px) and (max-width: 575px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            /* Navigation */
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: var(--shadow-sm);
+            }
+
+            nav.active {
+                max-height: 400px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 12px;
+                padding: 18px;
+            }
+
+            /* Typography */
+            h1 {
+                font-size: 1.85rem;
+            }
+
+            h2 {
+                font-size: 1.55rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+            }
+
+            /* Shop Page */
+            .section {
+                padding: 40px 16px;
+            }
+
+            .section h1 {
+                font-size: 1.85rem;
+                margin-bottom: 8px;
+            }
+
+            .section p {
+                font-size: 0.92rem;
+            }
+
+            /* Filters - Full width stacked */
+            .filters-horizontal {
+                gap: 8px;
+                flex-direction: column;
+            }
+
+            .filter-dropdown {
+                width: 100%;
+            }
+
+            .filter-dropdown-toggle {
+                width: 100%;
+                padding: 12px 16px;
+                font-size: 0.9rem;
+                justify-content: space-between;
+            }
+
+            .filter-dropdown-menu {
+                width: 100%;
+                left: 0;
+                right: 0;
+                min-width: 100%;
+            }
+
+            /* Product Controls - Stack vertically */
+            div[style*="margin-bottom: 25px"] {
+                margin-bottom: 20px !important;
+            }
+
+            div[style*="display: flex; justify-content: space-between"] {
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch !important;
+            }
+
+            div[style*="display: flex; gap: 15px"] {
+                flex-direction: column;
+                gap: 10px !important;
+            }
+
+            div[style*="display: flex; gap: 15px"] select {
+                width: 100%;
+                padding: 12px 14px;
+                font-size: 0.9rem;
+            }
+
+            /* Products Grid - 2 columns on larger mobile */
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .product-card {
+                border-radius: 8px;
+            }
+
+            .product-image {
+                height: 180px;
+                font-size: 2rem;
+            }
+
+            .badge {
+                font-size: 0.7rem;
+                padding: 5px 10px;
+            }
+
+            .product-info {
+                padding: 14px;
+            }
+
+            .product-category {
+                font-size: 0.7rem;
+                margin-bottom: 4px;
+            }
+
+            .product-name {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+                line-height: 1.3;
+            }
+
+            .product-description {
+                font-size: 0.78rem;
+                margin-bottom: 8px;
+                line-height: 1.4;
+            }
+
+            .product-sku {
+                font-size: 0.75rem;
+                margin-bottom: 10px;
+            }
+
+            .product-price {
+                font-size: 1.15rem;
+                margin-bottom: 12px;
+            }
+
+            .product-actions {
+                gap: 6px;
+                flex-direction: column;
+            }
+
+            .product-actions .btn {
+                width: 100%;
+                padding: 10px 12px;
+                font-size: 0.82rem;
+            }
+
+            /* Other Sections */
+            .collections-grid,
+            .testimonials-grid,
+            .usp-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+        }
+
+        /* ==================== MOBILE MEDIUM (375px - 479px) ==================== */
+        @media (min-width: 375px) and (max-width: 479px) {
+            .container {
+                padding: 0 14px;
+            }
+
+            /* Navigation */
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: var(--shadow-sm);
+            }
+
+            nav.active {
+                max-height: 400px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 12px;
+                padding: 16px;
+            }
+
+            /* Typography */
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                font-size: 1.45rem;
+            }
+
+            h3 {
+                font-size: 1.15rem;
+            }
+
+            /* Shop Page */
+            .section {
+                padding: 35px 14px;
+            }
+
+            .section h1 {
+                font-size: 1.7rem;
+                margin-bottom: 6px;
+            }
+
+            .section p {
+                font-size: 0.9rem;
+            }
+
+            /* Filters - Full width */
+            .filters-horizontal {
+                gap: 8px;
+                flex-direction: column;
+            }
+
+            .filter-dropdown {
+                width: 100%;
+            }
+
+            .filter-dropdown-toggle {
+                width: 100%;
+                padding: 11px 14px;
+                font-size: 0.88rem;
+                justify-content: space-between;
+            }
+
+            .filter-dropdown-menu {
+                width: 100%;
+                min-width: 100%;
+            }
+
+            .filter-dropdown-menu .filter-checkbox {
+                padding: 9px 14px;
+                font-size: 0.88rem;
+            }
+
+            /* Product Controls */
+            div[style*="margin-bottom: 25px"] {
+                margin-bottom: 18px !important;
+            }
+
+            div[style*="display: flex; justify-content: space-between"] {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            div[style*="display: flex; gap: 15px"] {
+                flex-direction: column;
+                gap: 8px !important;
+            }
+
+            div[style*="display: flex; gap: 15px"] select {
+                width: 100%;
+                padding: 11px 13px;
+                font-size: 0.88rem;
+            }
+
+            #product-count {
+                font-weight: 600;
+            }
+
+            /* Products Grid - Single column */
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .product-card {
+                border-radius: 8px;
+                max-width: 100%;
+            }
+
+            .product-image {
+                height: 220px;
+                font-size: 2.5rem;
+            }
+
+            .badge {
+                font-size: 0.7rem;
+                padding: 5px 10px;
+            }
+
+            .product-info {
+                padding: 16px;
+            }
+
+            .product-category {
+                font-size: 0.7rem;
+                margin-bottom: 5px;
+            }
+
+            .product-name {
+                font-size: 1rem;
+                margin-bottom: 7px;
+                line-height: 1.35;
+            }
+
+            .product-description {
+                font-size: 0.82rem;
+                margin-bottom: 10px;
+                line-height: 1.45;
+            }
+
+            .product-sku {
+                font-size: 0.76rem;
+                margin-bottom: 10px;
+            }
+
+            .product-price {
+                font-size: 1.25rem;
+                margin-bottom: 14px;
+            }
+
+            .product-actions {
+                gap: 8px;
+                flex-direction: row;
+            }
+
+            .product-actions .btn {
+                flex: 1;
+                padding: 11px 14px;
+                font-size: 0.85rem;
+            }
+
+            /* Other Sections */
+            .collections-grid,
+            .testimonials-grid,
+            .usp-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .breadcrumb {
+                padding: 15px 14px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ==================== MOBILE SMALL (320px - 374px) ==================== */
+        @media (max-width: 374px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            /* Navigation */
+            .menu-toggle {
+                display: flex;
+                gap: 5px;
+            }
+
+            .menu-toggle span {
+                width: 22px;
+                height: 2.5px;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: var(--shadow-sm);
+            }
+
+            nav.active {
+                max-height: 350px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                padding: 14px;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            /* Typography */
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1.05rem;
+            }
+
+            h4 {
+                font-size: 0.95rem;
+            }
+
+            /* Shop Page */
+            .section {
+                padding: 30px 12px;
+            }
+
+            .section h1 {
+                font-size: 1.5rem;
+                margin-bottom: 5px;
+            }
+
+            .section p {
+                font-size: 0.88rem;
+            }
+
+            /* Filters */
+            .filters-horizontal {
+                gap: 7px;
+                flex-direction: column;
+            }
+
+            .filter-dropdown {
+                width: 100%;
+            }
+
+            .filter-dropdown-toggle {
+                width: 100%;
+                padding: 10px 12px;
+                font-size: 0.85rem;
+                justify-content: space-between;
+            }
+
+            .filter-dropdown-toggle::after {
+                font-size: 0.65rem;
+            }
+
+            .filter-dropdown-menu {
+                width: 100%;
+                min-width: 100%;
+                padding: 10px 0;
+            }
+
+            .filter-dropdown-menu .filter-checkbox {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+
+            .filter-dropdown-menu .filter-checkbox span {
+                font-size: 0.85rem;
+            }
+
+            /* Product Controls */
+            div[style*="margin-bottom: 25px"] {
+                margin-bottom: 16px !important;
+            }
+
+            div[style*="display: flex; justify-content: space-between"] p {
+                font-size: 0.88rem;
+            }
+
+            div[style*="display: flex; justify-content: space-between"] {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            div[style*="display: flex; gap: 15px"] {
+                flex-direction: column;
+                gap: 8px !important;
+            }
+
+            div[style*="display: flex; gap: 15px"] select {
+                width: 100%;
+                padding: 10px 12px;
+                font-size: 0.85rem;
+            }
+
+            /* Products Grid - Single column */
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .product-card {
+                border-radius: 8px;
+            }
+
+            .product-image {
+                height: 200px;
+                font-size: 2.2rem;
+            }
+
+            .badge {
+                font-size: 0.65rem;
+                padding: 4px 9px;
+                top: 10px;
+                right: 10px;
+            }
+
+            .product-info {
+                padding: 14px;
+            }
+
+            .product-category {
+                font-size: 0.68rem;
+                margin-bottom: 4px;
+            }
+
+            .product-name {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+                line-height: 1.3;
+            }
+
+            .product-description {
+                font-size: 0.8rem;
+                margin-bottom: 8px;
+                line-height: 1.4;
+            }
+
+            .product-sku {
+                font-size: 0.74rem;
+                margin-bottom: 9px;
+            }
+
+            .product-price {
+                font-size: 1.15rem;
+                margin-bottom: 12px;
+            }
+
+            .product-actions {
+                gap: 7px;
+                flex-direction: row;
+            }
+
+            .product-actions .btn {
+                flex: 1;
+                padding: 10px 10px;
+                font-size: 0.8rem;
+            }
+
+            /* Other Sections */
+            .collections-grid,
+            .testimonials-grid,
+            .usp-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .footer-section h4 {
+                font-size: 1rem;
+            }
+
+            .breadcrumb {
+                padding: 12px;
+                font-size: 0.82rem;
+                gap: 6px;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .cart-icon {
+                font-size: 1.2rem;
+            }
+
+            .cart-count {
+                width: 18px;
+                height: 18px;
+                font-size: 0.7rem;
+                top: -7px;
+                right: -7px;
+            }
+        }
+    </style>
 </body>
+
 </html>

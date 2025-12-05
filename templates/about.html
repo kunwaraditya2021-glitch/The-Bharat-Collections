@@ -7,12 +7,17 @@
     <title>About Us - The Bharat Collections</title>
     
     <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/भारत_converted.ico">
 </head>
 <body>
+   
+
     <!-- ===== HEADER ===== -->
     <header>
         <div class="header-container">
-            <a href="/" class="logo">BHARAT</a>
+            <a href="/" class="logo">
+                <img src="/static/images/भारत.png" alt="The Bharat Collections Logo" class="logo-image">
+            </a>
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -34,10 +39,17 @@
         </div>
     </header>
 
-    <!-- ===== ABOUT HERO ===== -->
-    <section class="about-hero">
-        <h1>Our Story</h1>
-        <p>Celebrating Indian Heritage, Inspiring Modern Style</p>
+  
+     <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="hero-banner-overlay">
+            <img src="/static/images/भारत (250 x 250 px).png" alt="Hero Banner" class="hero-banner-image">
+        </div>
+        <div class="hero-content">
+            <h1>Our Collection</h1>
+            <p>Celebrating Indian Heritage, Inspiring Modern Style</p>
+
+        </div>
     </section>
 
     <!-- ===== BREADCRUMB ===== -->
@@ -124,8 +136,7 @@
                     </li>
                 </ul>
             </div>
-
-            <div class="about-section">
+            <!-- <div class="about-section"> 
                 <h3>Meet Our Team</h3>
                 <p style="margin-bottom: 30px;">Our talented team brings diverse expertise in design, manufacturing, logistics, and customer service:</p>
                 <div class="team-grid">
@@ -167,7 +178,7 @@
             </div>
         </div>
     </section>
-
+-->
     <!-- ===== CTA SECTION ===== -->
     <section class="section" style="background-color: #F7FFF6; text-align: center;">
         <div class="container">
@@ -223,5 +234,15 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script src="/static/script.js"></script>
+    <style>
+         .hero {
+            
+            padding: 60px 20px !important;
+           
+        }
+        .section{
+            padding: 0px 20px;
+        }
+    </style>
 </body>
 </html>

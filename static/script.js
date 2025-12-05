@@ -28,10 +28,10 @@ async function checkBackendConnection() {
 // INITIALIZE APP
 // =====================================================
 
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
   // Check backend connection first
   await checkBackendConnection();
-  
+
   initializeNavigation();
   initializeFAQ();
   initializeProductFilters();
@@ -49,14 +49,14 @@ function initializeNavigation() {
   const nav = document.querySelector('nav');
 
   if (menuToggle) {
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function () {
       nav.classList.toggle('active');
     });
   }
 
   // Close menu when a link is clicked
   document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
       if (nav) nav.classList.remove('active');
     });
   });
@@ -105,7 +105,7 @@ async function addToCart(productId, productName, price, size, color) {
         color: color
       })
     });
-    
+
     if (response.ok) {
       const data = await response.json();
       console.log('✓ Item synced to backend cart');
@@ -175,7 +175,7 @@ function initializeFAQ() {
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     if (question) {
-      question.addEventListener('click', function() {
+      question.addEventListener('click', function () {
         // Close other items
         faqItems.forEach(otherItem => {
           if (otherItem !== item) {
@@ -198,28 +198,99 @@ function initializeProductFilters() {
   const filterCheckboxes = document.querySelectorAll('.filter-checkbox input');
 
   filterCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
+    checkbox.addEventListener('change', function () {
       applyFilters();
     });
   });
 }
+document.querySelectorAll('.filter-title').forEach(title => {
+  title.addEventListener('click', () => {
+    // Toggles the 'active' class on the parent .filter-group
+    title.closest('.filter-group').classList.toggle('active');
+  });
+});
 
+
+/* === UPDATED MAIN FILTERING FUNCTION === */
 function applyFilters() {
-  const selectedCategories = Array.from(document.querySelectorAll('.filter-checkbox input:checked'))
-    .map(checkbox => checkbox.value);
-
   const products = document.querySelectorAll('.product-card');
+  let visibleCount = 0;
+
+  // 1. Get Selected Checkbox Filters (Collection, Price)
+  const activeFilters = Array.from(document.querySelectorAll('.filters input[type="checkbox"]:checked')).map(cb => cb.value);
+
+  // 2. Get Selected Category Dropdown Filter (The new top filter)
+  const categoryDropdown = document.querySelector('select[onchange="applyCategoryFilter(this.value)"]');
+  const selectedCategory = categoryDropdown ? categoryDropdown.value : '';
 
   products.forEach(product => {
-    const category = product.getAttribute('data-category');
-    if (selectedCategories.length === 0 || selectedCategories.includes(category)) {
-      product.style.display = 'block';
-      setTimeout(() => product.style.opacity = '1', 10);
+    const productData = product.getAttribute('data-category');
+    const productCategories = productData ? productData.split(',') : [];
+    const productPrice = parseFloat(product.getAttribute('data-price'));
+
+    let isVisible = true;
+
+    // --- 1. Check Category Dropdown Filter ---
+    // If a specific category is selected, the product must belong to it.
+    if (selectedCategory && !productCategories.includes(selectedCategory)) {
+      isVisible = false;
+    }
+
+    // --- 2. Check Collection Filter (Checkbox Group 1) ---
+    const collectionFilters = ['heritage', 'basics', 'summer'];
+    const activeCollections = activeFilters.filter(filter => collectionFilters.includes(filter));
+
+    if (activeCollections.length > 0) {
+      // If any collection checkbox is checked, the product must match at least one.
+      const matchesCollection = activeCollections.some(filter => productCategories.includes(filter));
+      if (!matchesCollection) {
+        isVisible = false;
+      }
+    }
+
+    // --- 3. Check Price Range Filter (Checkbox Group 2) ---
+    const priceFilters = ['under-999', '1000-1999', '2000-above'];
+    const activePrices = activeFilters.filter(filter => priceFilters.includes(filter));
+
+    if (activePrices.length > 0) {
+      // If any price checkbox is checked, the product must match at least one range.
+      let matchesPrice = false;
+
+      for (const range of activePrices) {
+        if (range === 'under-999' && productPrice < 999) {
+          matchesPrice = true;
+        } else if (range === '1000-1999' && productPrice >= 1000 && productPrice <= 1999) {
+          matchesPrice = true;
+        } else if (range === '2000-above' && productPrice >= 2000) {
+          matchesPrice = true;
+        }
+      }
+      if (!matchesPrice) {
+        isVisible = false;
+      }
+    }
+
+    // --- Final Visibility ---
+    if (isVisible) {
+      product.style.display = 'block'; // Ensure your CSS uses grid display for the products-grid container
+      visibleCount++;
     } else {
-      product.style.opacity = '0';
-      setTimeout(() => product.style.display = 'none', 300);
+      product.style.display = 'none';
     }
   });
+
+  // Update the product count display
+  const productCountElement = document.getElementById('product-count');
+  if (productCountElement) {
+    productCountElement.textContent = visibleCount;
+  }
+}
+/* === NEW FUNCTION to link the new Categories dropdown to the main filter logic === */
+function applyCategoryFilter(categoryValue) {
+  // We don't need complex logic here. Just store the selected category
+  // and call the main applyFilters function to handle all filters together.
+  // The main applyFilters function will read this dropdown's value.
+  applyFilters();
 }
 
 // =====================================================
@@ -252,10 +323,10 @@ async function fetchProducts(category = null, collection = null) {
   try {
     let url = `${API_BASE_URL}/products`;
     const params = new URLSearchParams();
-    
+
     if (category) params.append('category', category);
     if (collection) params.append('collection', collection);
-    
+
     if (params.toString()) {
       url += '?' + params.toString();
     }
@@ -318,7 +389,7 @@ async function submitOrder(customerEmail, shippingAddress, items) {
 async function getOrderStatus(orderId) {
   try {
     const response = await fetch(`${API_BASE_URL}/orders/${orderId}`);
-    
+
     if (response.ok) {
       const data = await response.json();
       console.log('✓ Order status retrieved:', data.data.status);
@@ -333,7 +404,7 @@ async function getOrderStatus(orderId) {
 async function getQikinkFulfillmentStatus(orderId) {
   try {
     const response = await fetch(`${API_BASE_URL}/qikink/fulfillment/${orderId}`);
-    
+
     if (response.ok) {
       const data = await response.json();
       console.log('✓ Fulfillment status retrieved');
@@ -482,7 +553,7 @@ function attachEventListeners() {
   // Setup cart icon click
   const cartIcon = document.querySelector('.cart-icon');
   if (cartIcon) {
-    cartIcon.addEventListener('click', function() {
+    cartIcon.addEventListener('click', function () {
       // Could open a cart modal or navigate to cart page
       window.location.href = '#cart';
     });
@@ -514,35 +585,31 @@ function searchProducts(query) {
 // SORT FUNCTIONALITY
 // ===================================================== 
 
-function sortProducts(sortBy) {
-  const productsContainer = document.querySelector('.products-grid');
-  if (!productsContainer) return;
-
-  const products = Array.from(document.querySelectorAll('.product-card'));
+/* === EXISTING SORTING FUNCTION (No change needed) === */
+function sortProducts(sortValue) {
+  const grid = document.querySelector('.products-grid');
+  const products = Array.from(grid.querySelectorAll('.product-card'));
 
   products.sort((a, b) => {
-    const priceA = parseFloat(a.getAttribute('data-price') || 0);
-    const priceB = parseFloat(b.getAttribute('data-price') || 0);
+    const nameA = a.querySelector('.product-name').textContent.toLowerCase();
+    const nameB = b.querySelector('.product-name').textContent.toLowerCase();
+    const priceA = parseFloat(a.getAttribute('data-price'));
+    const priceB = parseFloat(b.getAttribute('data-price'));
 
-    switch(sortBy) {
-      case 'price-low':
-        return priceA - priceB;
-      case 'price-high':
-        return priceB - priceA;
-      case 'name-asc':
-        const nameA = a.querySelector('.product-name')?.textContent || '';
-        const nameB = b.querySelector('.product-name')?.textContent || '';
-        return nameA.localeCompare(nameB);
-      case 'newest':
-        return 0; // Assuming order in DOM is newest
-      default:
-        return 0;
+    if (sortValue === 'price-low') {
+      return priceA - priceB;
+    } else if (sortValue === 'price-high') {
+      return priceB - priceA;
+    } else if (sortValue === 'name-asc') {
+      return nameA.localeCompare(nameB);
     }
+    // You would need a 'newest' implementation based on a data-date attribute, 
+    // but for now, it can be the default order.
+    return 0;
   });
 
-  products.forEach(product => {
-    productsContainer.appendChild(product);
-  });
+  // Re-append sorted products to the grid
+  products.forEach(product => grid.appendChild(product));
 }
 
 // =====================================================
@@ -623,7 +690,7 @@ async function loadDynamicProducts() {
   // Load products from backend on shop page
   if (document.querySelector('.products-grid')) {
     const products = await fetchProducts();
-    
+
     if (products && products.length > 0) {
       populateProductsGrid(products);
       console.log('✓ Products dynamically loaded');
