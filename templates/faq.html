@@ -1,31 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Frequently Asked Questions - The Bharat Collections. Find answers to common questions about our products, shipping, and policies.">
+    <meta name="description"
+        content="Frequently Asked Questions - The Bharat Collections. Find answers to common questions about our products, shipping, and policies.">
     <title>FAQs - The Bharat Collections</title>
-    
+
     <link rel="stylesheet" href="/static/styles.css">
     <link rel="icon" type="image/x-icon" href="/static/images/भारत_converted.ico">
-</head>
-<body>
+    </head>
 
-    <!-- ===== HEADER ===== -->
+<body>
+    <!-- Header -->
     <header>
         <div class="header-container">
             <a href="/" class="logo">
                 <img src="/static/images/भारत.png" alt="The Bharat Collections Logo" class="logo-image">
             </a>
-            <nav>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="faq.html">FAQs</a></li>
+                    <li> <button class="account-btn" type="button" aria-label="Account">
+                            <svg class="account-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                width="18" height="18">
+                                <circle cx="10" cy="7" r="4" stroke="#7BA395" stroke-width="2" />
+                                <path d="M3 17c0-2.5 3-4 7-4s7 1.5 7 4" stroke="#7BA395" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <span class="account-label">Account</span>
+                        </button></li>
                 </ul>
             </nav>
+            <div class="header-actions">
+                <form class="navbar-search" action="#" method="get">
+                    <input type="text" class="search-input" placeholder="Search..." name="q" aria-label="Search">
+                    <button type="submit" class="search-btn" aria-label="Search">
+                        <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="30">
+                            <circle cx="9" cy="9" r="7" stroke="#7BA395" stroke-width="2" />
+                            <line x1="15" y1="15" x2="19" y2="19" stroke="#7BA395" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
             <div class="cart-icon">
                 🛒
                 <span class="cart-count">0</span>
@@ -45,8 +69,8 @@
         <span class="active">FAQs</span>
     </div>
 
-  
-     <!-- ===== HERO SECTION ===== -->
+
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero" id="home">
         <div class="hero-banner-overlay">
             <img src="/static/images/भारत (250 x 250 px).png" alt="Hero Banner" class="hero-banner-image">
@@ -61,10 +85,12 @@
     <!-- ===== FAQs SECTION ===== -->
     <section class="section">
         <div class="container">
-            
+
             <!-- SEARCH FAQ -->
             <div style="margin-bottom: 40px;">
-                <input type="text" placeholder="Search FAQs..." id="faq-search" style="width: 100%; max-width: 500px; padding: 12px 16px; border: 2px solid var(--border-light); border-radius: 6px; font-size: 1rem;" onkeyup="filterFAQs(this.value)">
+                <input type="text" placeholder="Search FAQs..." id="faq-search"
+                    style="width: 100%; max-width: 500px; padding: 12px 16px; border: 2px solid var(--border-light); border-radius: 6px; font-size: 1rem;"
+                    onkeyup="filterFAQs(this.value)">
             </div>
 
             <!-- ABOUT PRODUCTS -->
@@ -77,7 +103,10 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We use premium quality materials including 100% organic cotton, cotton blends, linen, and other sustainable fabrics. All materials are carefully sourced to ensure comfort, durability, and environmental responsibility. Each product is crafted to provide the best balance of quality and affordability.</p>
+                        <p>We use premium quality materials including 100% organic cotton, cotton blends, linen, and
+                            other sustainable fabrics. All materials are carefully sourced to ensure comfort,
+                            durability, and environmental responsibility. Each product is crafted to provide the best
+                            balance of quality and affordability.</p>
                     </div>
                 </div>
 
@@ -87,7 +116,10 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Most of our collections are vegan-friendly as we primarily use plant-based fabrics like cotton and linen. Our manufacturing partners follow ethical practices and maintain strict animal welfare standards. We do not test on animals and support cruelty-free production methods.</p>
+                        <p>Most of our collections are vegan-friendly as we primarily use plant-based fabrics like
+                            cotton and linen. Our manufacturing partners follow ethical practices and maintain strict
+                            animal welfare standards. We do not test on animals and support cruelty-free production
+                            methods.</p>
                     </div>
                 </div>
 
@@ -97,7 +129,10 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Heritage Prints:</strong> Traditional Indian patterns with contemporary cuts. <strong>Classic Basics:</strong> Timeless essentials in premium quality. <strong>Summer Vibes:</strong> Lightweight, breathable collection for warm weather. Each range celebrates different aspects of Indian fashion while maintaining our quality standards.</p>
+                        <p><strong>Heritage Prints:</strong> Traditional Indian patterns with contemporary cuts.
+                            <strong>Classic Basics:</strong> Timeless essentials in premium quality. <strong>Summer
+                                Vibes:</strong> Lightweight, breathable collection for warm weather. Each range
+                            celebrates different aspects of Indian fashion while maintaining our quality standards.</p>
                     </div>
                 </div>
 
@@ -107,7 +142,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Currently, we ship across India (pan-India delivery). International shipping is coming soon. Subscribe to our newsletter to be notified when we expand globally. For now, we focus on serving the Indian market with quality products and excellent service.</p>
+                        <p>Currently, we ship across India (pan-India delivery). International shipping is coming soon.
+                            Subscribe to our newsletter to be notified when we expand globally. For now, we focus on
+                            serving the Indian market with quality products and excellent service.</p>
                     </div>
                 </div>
 
@@ -117,7 +154,10 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Each product page includes a detailed size guide with measurements in centimeters. You can compare your measurements with our size chart to find the perfect fit. If you're between sizes, we recommend ordering the larger size for comfort. Our return policy makes it easy to exchange if needed.</p>
+                        <p>Each product page includes a detailed size guide with measurements in centimeters. You can
+                            compare your measurements with our size chart to find the perfect fit. If you're between
+                            sizes, we recommend ordering the larger size for comfort. Our return policy makes it easy to
+                            exchange if needed.</p>
                     </div>
                 </div>
 
@@ -133,7 +173,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We deliver within 3-5 business days across India. Delivery time may vary based on your location and current order volume. You'll receive a tracking ID via email as soon as your order ships, allowing you to monitor delivery status in real-time.</p>
+                        <p>We deliver within 3-5 business days across India. Delivery time may vary based on your
+                            location and current order volume. You'll receive a tracking ID via email as soon as your
+                            order ships, allowing you to monitor delivery status in real-time.</p>
                     </div>
                 </div>
 
@@ -143,7 +185,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! We offer free shipping on all orders across India. There are no hidden charges or minimum order requirements. Our commitment is to provide affordable, quality fashion with transparent pricing.</p>
+                        <p>Yes! We offer free shipping on all orders across India. There are no hidden charges or
+                            minimum order requirements. Our commitment is to provide affordable, quality fashion with
+                            transparent pricing.</p>
                     </div>
                 </div>
 
@@ -153,7 +197,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely! Once your order ships, you'll receive an email with a tracking number. You can track your package through our partner Qikink's tracking system or on your account dashboard. We also send SMS updates for major milestones during delivery.</p>
+                        <p>Absolutely! Once your order ships, you'll receive an email with a tracking number. You can
+                            track your package through our partner Qikink's tracking system or on your account
+                            dashboard. We also send SMS updates for major milestones during delivery.</p>
                     </div>
                 </div>
 
@@ -163,7 +209,10 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We deliver to all addresses across India including metro cities, tier-2 cities, and even tier-3 towns. Whether you're in Delhi, Mumbai, Bangalore, or a small town, we ensure your order reaches you safely. Our partnership with Qikink enables this extensive pan-India reach.</p>
+                        <p>We deliver to all addresses across India including metro cities, tier-2 cities, and even
+                            tier-3 towns. Whether you're in Delhi, Mumbai, Bangalore, or a small town, we ensure your
+                            order reaches you safely. Our partnership with Qikink enables this extensive pan-India
+                            reach.</p>
                     </div>
                 </div>
 
@@ -173,7 +222,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, you can change your delivery address within 24 hours of placing your order. Contact our customer support team immediately with your order number and the new address. After 24 hours, the order enters the shipping queue and cannot be modified.</p>
+                        <p>Yes, you can change your delivery address within 24 hours of placing your order. Contact our
+                            customer support team immediately with your order number and the new address. After 24
+                            hours, the order enters the shipping queue and cannot be modified.</p>
                     </div>
                 </div>
 
@@ -189,7 +240,10 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We offer a hassle-free 7-day return policy. If you're not satisfied with your purchase, you can return it within 7 days of delivery. The product must be unused, unwashed, and in original packaging. We'll process refunds within 5-7 business days after receiving the returned item.</p>
+                        <p>We offer a hassle-free 7-day return policy. If you're not satisfied with your purchase, you
+                            can return it within 7 days of delivery. The product must be unused, unwashed, and in
+                            original packaging. We'll process refunds within 5-7 business days after receiving the
+                            returned item.</p>
                     </div>
                 </div>
 
@@ -199,7 +253,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Log into your account, select the order, and click "Return/Exchange." Follow the steps to generate a return label. Pack your item securely and drop it off at any Qikink pickup point. You can also call our support team for assistance with the return process.</p>
+                        <p>Log into your account, select the order, and click "Return/Exchange." Follow the steps to
+                            generate a return label. Pack your item securely and drop it off at any Qikink pickup point.
+                            You can also call our support team for assistance with the return process.</p>
                     </div>
                 </div>
 
@@ -209,7 +265,10 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>For returns due to defects or our mistake, return shipping is completely free. For returns due to customer preference, we provide a prepaid return label, making the process convenient and transparent. You can choose to pay for return shipping and receive a full refund or exchange for free.</p>
+                        <p>For returns due to defects or our mistake, return shipping is completely free. For returns
+                            due to customer preference, we provide a prepaid return label, making the process convenient
+                            and transparent. You can choose to pay for return shipping and receive a full refund or
+                            exchange for free.</p>
                     </div>
                 </div>
 
@@ -219,7 +278,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! Exchanges are easy and free. Simply initiate the exchange request within 7 days of delivery, select the new size or color, and we'll ship it to you at no extra cost. Once we receive your return, the new item will be dispatched within 2-3 business days.</p>
+                        <p>Yes! Exchanges are easy and free. Simply initiate the exchange request within 7 days of
+                            delivery, select the new size or color, and we'll ship it to you at no extra cost. Once we
+                            receive your return, the new item will be dispatched within 2-3 business days.</p>
                     </div>
                 </div>
 
@@ -229,7 +290,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Contact our support team immediately with photos of the damaged product and packaging. We'll arrange a free replacement or full refund without requiring you to return the damaged item. Your satisfaction is our priority.</p>
+                        <p>Contact our support team immediately with photos of the damaged product and packaging. We'll
+                            arrange a free replacement or full refund without requiring you to return the damaged item.
+                            Your satisfaction is our priority.</p>
                     </div>
                 </div>
 
@@ -245,7 +308,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We accept all major payment methods: Credit Cards (Visa, Mastercard, Amex), Debit Cards, UPI, Net Banking, Wallets (PayTM, PhonePe, Google Pay), and Cash on Delivery in select areas. All transactions are secure and encrypted.</p>
+                        <p>We accept all major payment methods: Credit Cards (Visa, Mastercard, Amex), Debit Cards, UPI,
+                            Net Banking, Wallets (PayTM, PhonePe, Google Pay), and Cash on Delivery in select areas. All
+                            transactions are secure and encrypted.</p>
                     </div>
                 </div>
 
@@ -255,7 +320,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Your security is our priority. We use industry-standard SSL encryption and comply with PCI DSS standards for payment processing. Your payment information is never stored on our servers and is processed through secure third-party gateways.</p>
+                        <p>Your security is our priority. We use industry-standard SSL encryption and comply with PCI
+                            DSS standards for payment processing. Your payment information is never stored on our
+                            servers and is processed through secure third-party gateways.</p>
                     </div>
                 </div>
 
@@ -265,7 +332,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! We welcome bulk and wholesale orders. For orders above 50 units, please contact our B2B team at wholesale@bharatcollections.com for special pricing and customization options. We can offer competitive rates for businesses and organizations.</p>
+                        <p>Yes! We welcome bulk and wholesale orders. For orders above 50 units, please contact our B2B
+                            team at wholesale@bharatcollections.com for special pricing and customization options. We
+                            can offer competitive rates for businesses and organizations.</p>
                     </div>
                 </div>
 
@@ -275,7 +344,10 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>You can cancel your order within 24 hours of placing it before it enters the shipping queue. After 24 hours, the order is already being prepared for shipment. Contact our support team immediately for cancellation requests. Refunds will be processed within 5-7 business days.</p>
+                        <p>You can cancel your order within 24 hours of placing it before it enters the shipping queue.
+                            After 24 hours, the order is already being prepared for shipment. Contact our support team
+                            immediately for cancellation requests. Refunds will be processed within 5-7 business days.
+                        </p>
                     </div>
                 </div>
 
@@ -285,7 +357,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>During checkout, you'll see a field for "Promo Code" or "Discount Code." Enter your valid code and click "Apply." The discount will be reflected in your order total before payment. Check your email for exclusive codes or subscribe to our newsletter for special offers.</p>
+                        <p>During checkout, you'll see a field for "Promo Code" or "Discount Code." Enter your valid
+                            code and click "Apply." The discount will be reflected in your order total before payment.
+                            Check your email for exclusive codes or subscribe to our newsletter for special offers.</p>
                     </div>
                 </div>
 
@@ -301,7 +375,10 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Visit our website and click on "Sign Up" or "Create Account." Enter your email and create a password, or sign up using your Google or social media account. You'll receive a verification email to confirm your account. Having an account helps track orders and saves your preferences.</p>
+                        <p>Visit our website and click on "Sign Up" or "Create Account." Enter your email and create a
+                            password, or sign up using your Google or social media account. You'll receive a
+                            verification email to confirm your account. Having an account helps track orders and saves
+                            your preferences.</p>
                     </div>
                 </div>
 
@@ -311,7 +388,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! You can shop as a guest. Simply add items to your cart and proceed to checkout. You'll be able to enter your email for order confirmation without creating a formal account. However, having an account provides benefits like order history and faster checkout.</p>
+                        <p>Yes! You can shop as a guest. Simply add items to your cart and proceed to checkout. You'll
+                            be able to enter your email for order confirmation without creating a formal account.
+                            However, having an account provides benefits like order history and faster checkout.</p>
                     </div>
                 </div>
 
@@ -321,7 +400,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Click on "Forgot Password" on the login page. Enter your email address and we'll send a password reset link. Click the link, create a new password, and you're done! If you don't receive the email within 5 minutes, check your spam folder or contact support.</p>
+                        <p>Click on "Forgot Password" on the login page. Enter your email address and we'll send a
+                            password reset link. Click the link, create a new password, and you're done! If you don't
+                            receive the email within 5 minutes, check your spam folder or contact support.</p>
                     </div>
                 </div>
 
@@ -331,7 +412,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>You can reach us via email at support@bharatcollections.com or call +91 98765 43210 (10 AM - 6 PM IST). You can also use the contact form on our website. We respond to all queries within 24 hours. For urgent issues, please call our support hotline.</p>
+                        <p>You can reach us via email at support@bharatcollections.com or call +91 98765 43210 (10 AM -
+                            6 PM IST). You can also use the contact form on our website. We respond to all queries
+                            within 24 hours. For urgent issues, please call our support hotline.</p>
                     </div>
                 </div>
 
@@ -341,7 +424,9 @@
                         <span class="faq-toggle">▶</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Join our newsletter to get exclusive discounts on your first purchase and special member-only offers. Every purchase earns you points that can be redeemed for future discounts. Loyalty members also get early access to new collections and special sales.</p>
+                        <p>Join our newsletter to get exclusive discounts on your first purchase and special member-only
+                            offers. Every purchase earns you points that can be redeemed for future discounts. Loyalty
+                            members also get early access to new collections and special sales.</p>
                     </div>
                 </div>
 
@@ -354,23 +439,59 @@
     <section class="section" style="background-color: var(--background-light); text-align: center;">
         <div class="container">
             <h2>Didn't find your answer?</h2>
-            <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--text-light);">Our customer support team is here to help. Reach out anytime!</p>
+            <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--text-light);">Our customer support team is
+                here to help. Reach out anytime!</p>
             <a href="contact.html" class="btn btn-primary">Contact Support</a>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>The Bharat Collections</h4>
-                <p>Premium casual clothing celebrating Indian heritage with contemporary style.</p>
+
+        <!-- TOP SECTION -->
+        <div class="footer-top">
+
+            <!-- BRAND BLOCK -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="/static/images/भारत.png" alt="The Bharat Collections Logo" class="footer-logo-img">
+                </div>
+
+                <h4 class="footer-brand-title">The Bharat Collections</h4>
+
+                <p class="footer-brand-text">
+                    Premium casual clothing that celebrates Indian heritage with contemporary style.
+                    Designed for comfort, crafted with pride.
+                </p>
+            </div>
+
+            <!-- SOCIAL ICONS -->
+            <div class="footer-social-block">
                 <div class="social-links">
-                    <a href="#" title="Instagram">📱</a>
-                    <a href="#" title="Facebook">f</a>
-                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="https://www.instagram.com/thebharatcollections/" title="Instagram" target="_blank"
+                        rel="noopener">
+                        <!-- Instagram SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M349.33 69.33H162.67A93.34 93.34 0 0 0 69.33 162.67v186.66A93.34 93.34 0 0 0 162.67 442.67h186.66A93.34 93.34 0 0 0 442.67 349.33V162.67A93.34 93.34 0 0 0 349.33 69.33zM256 164a92 92 0 1 1 0 184 92 92 0 0 1 0-184zm121.6-41.6a21.6 21.6 0 1 1-43.2 0 21.6 21.6 0 0 1 43.2 0z" />
+                            <path fill="currentColor"
+                                d="M256 202.67A53.33 53.33 0 1 0 256 309.33 53.33 53.33 0 0 0 256 202.67z" />
+                        </svg>
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=61584774924196" title="Facebook" target="_blank"
+                        rel="noopener">f</a>
+
+                    <a href="#" title="Twitter" target="_blank" rel="noopener">𝕏</a>
                 </div>
             </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <!-- BOTTOM GRID SECTION -->
+        <div class="footer-bottom-grid">
 
             <div class="footer-section">
                 <h4>Quick Links</h4>
@@ -392,15 +513,12 @@
                 </ul>
             </div>
 
-            <div class="footer-section">
-                <h4>Manufacturing Partner</h4>
-                <p>In partnership with <strong>Qikink</strong> for seamless fulfillment and quality assurance.</p>
-            </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2025 The Bharat Collections. All rights reserved. Proudly Indian, Globally Inspired.</p>
         </div>
+
     </footer>
 
     <!-- ===== FAQ SEARCH SCRIPT ===== -->
@@ -424,12 +542,13 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script src="/static/script.js"></script>
-     <style>
-         .hero {
-            
+    <style>
+        .hero {
+
             padding: 60px 20px !important;
-           
+
         }
     </style>
 </body>
+
 </html>
