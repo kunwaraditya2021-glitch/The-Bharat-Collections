@@ -1,0 +1,13 @@
+/* Account Container for dropdown positioning */
+.account-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Update dropdown positioning to be relative to container */
+.account-container .account-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}

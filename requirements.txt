@@ -3,3 +3,23 @@ Flask-CORS==4.0.0
 Werkzeug==3.0.1
 requests==2.31.0
 gunicorn==21.2.0
+
+# Supabase integration
+supabase==2.3.0
+postgrest==0.13.2
+
+# Razorpay payment gateway
+razorpay==1.4.1
+
+# JWT authentication
+PyJWT==2.8.0
+bcrypt==4.1.2
+
+# Background jobs
+APScheduler==3.10.4
+
+# Environment variables
+python-dotenv==1.0.0
+
+# HTTP retry logic
+urllib3==2.1.0

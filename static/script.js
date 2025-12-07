@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   initializeProductFilters();
   updateCartDisplay();
   attachEventListeners();
+  initAccountUI();
   initializeLazyLoading();
 });
 
@@ -744,3 +745,74 @@ initializeLazyLoading();
 
 // Load dynamic products if on shop page
 document.addEventListener('DOMContentLoaded', loadDynamicProducts);
+
+// =====================================================
+// ACCOUNT BUTTON / DROPDOWN (global)
+// =====================================================
+
+function initAccountUI() {
+  // Attach click handler to all account buttons (icon-only)
+  document.querySelectorAll('.account-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      handleAccountClick(e.currentTarget);
+    });
+  });
+
+  // Close dropdown when clicking outside is handled in index.html; ensure dropdowns close here too
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.account-container').forEach(container => {
+      const dropdown = container.querySelector('.account-dropdown');
+      const btn = container.querySelector('.account-btn');
+      if (!container.contains(e.target)) {
+        dropdown && dropdown.classList.remove('active');
+      }
+    });
+  });
+
+  // Update UI on load if user is logged in
+  const userEmail = localStorage.getItem('user_email');
+  if (userEmail) {
+    // set dropdownEmail in any visible dropdowns
+    document.querySelectorAll('#dropdownEmail').forEach(el => el.textContent = userEmail);
+  }
+}
+
+function handleAccountClick(buttonEl) {
+  const container = buttonEl.closest('.account-container');
+  const dropdown = container ? container.querySelector('.account-dropdown') : null;
+  const userEmail = localStorage.getItem('user_email');
+
+  if (userEmail) {
+    if (dropdown) {
+      dropdown.classList.toggle('active');
+      const emailEl = dropdown.querySelector('#dropdownEmail');
+      if (emailEl) emailEl.textContent = userEmail;
+    }
+  } else {
+    // If modal exists on this page, open it; otherwise redirect to home where modal exists
+    const modal = document.getElementById('accountModal');
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Redirect to home to allow login/signup
+      window.location.href = '/';
+    }
+  }
+}
+
+function handleLogout() {
+  localStorage.removeItem('user_token');
+  localStorage.removeItem('user_email');
+  localStorage.removeItem('user_name');
+  localStorage.removeItem('refresh_token');
+
+  // Close any open dropdowns and reset button tooltip
+  document.querySelectorAll('.account-dropdown').forEach(dd => dd.classList.remove('active'));
+
+  // Optionally show a toast/alert
+  alert('Logged out successfully');
+
+  // Update any dropdown email text
+  document.querySelectorAll('#dropdownEmail').forEach(el => el.textContent = '');
+}

@@ -11,6 +11,8 @@
     <title>The Bharat Collections - Premium Indian Casual Wear</title>
 
     <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/modal.css">
+        <link rel="stylesheet" href="/static/account-container.css">
     <link rel="icon" type="image/x-icon" href="/static/images/भारत_converted.ico">
 </head>
 
@@ -28,15 +30,6 @@
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="faq.html">FAQs</a></li>
-                    <li> <button class="account-btn" type="button" aria-label="Account">
-                            <svg class="account-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                width="18" height="18">
-                                <circle cx="10" cy="7" r="4" stroke="#7BA395" stroke-width="2" />
-                                <path d="M3 17c0-2.5 3-4 7-4s7 1.5 7 4" stroke="#7BA395" stroke-width="2"
-                                    stroke-linecap="round" />
-                            </svg>
-                            <span class="account-label">Account</span>
-                        </button></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -51,6 +44,32 @@
                         </svg>
                     </button>
                 </form>
+                <div class="account-container">
+                    <button class="account-btn icon-only" type="button" aria-label="Account">
+                        <svg class="account-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            width="20" height="20">
+                            <circle cx="10" cy="7" r="4" stroke="#7BA395" stroke-width="2" />
+                            <path d="M3 17c0-2.5 3-4 7-4s7 1.5 7 4" stroke="#7BA395" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                        <span class="account-tooltip">Account</span>
+                    </button>
+                    <div class="account-dropdown" id="accountDropdown">
+                        <div class="dropdown-content">
+                            <div class="dropdown-header">
+                                <p class="dropdown-email" id="dropdownEmail"></p>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item logout-btn" onclick="handleLogout()">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 2H12V14H6" stroke="#E38C52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 8H10M10 6L12 8L10 10" stroke="#E38C52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="cart-icon">
                 🛒
@@ -260,8 +279,270 @@
     </footer>
 
 
+    <!-- ===== ACCOUNT MODAL ===== -->
+    <div class="modal-overlay" id="accountModal">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeAccountModal()">&times;</button>
+
+            <div class="modal-header">
+                <h2 class="modal-title">Welcome to The Bharat Collections</h2>
+                <div class="modal-tabs">
+                    <button class="tab-btn active" onclick="switchTab('login')">Login</button>
+                    <button class="tab-btn" onclick="switchTab('signup')">Sign Up</button>
+                </div>
+            </div>
+
+            <!-- LOGIN FORM -->
+            <div class="modal-content" id="loginForm">
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                </form>
+                <div class="social-login">
+                    <p class="divider-text">Or continue with</p>
+                    <div class="social-buttons">
+                        <button class="social-btn google-btn">
+                            <svg width="18" height="18" viewBox="0 0 18 18">
+                                <path fill="#4285F4"
+                                    d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+                                <path fill="#34A853"
+                                    d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" />
+                                <path fill="#FBBC05"
+                                    d="M3.964 10.71c-.18-.54-.282-1.117-.282-1.71s.102-1.17.282-1.71V4.958H.957C.347 6.173 0 7.548 0 9s.348 2.827.957 4.042l3.007-2.332z" />
+                                <path fill="#EA4335"
+                                    d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
+                            </svg>
+                            Google
+                        </button>
+                        <button class="social-btn facebook-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIGNUP FORM -->
+            <div class="modal-content" id="signupForm" style="display: none;">
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" name="password" placeholder="••••••••" required
+                            minlength="8">
+                        <small class="form-hint">Minimum 8 characters</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" name="confirmPassword" placeholder="••••••••"
+                            required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" required>
+                            <span>I agree to the <a href="#">Terms & Conditions</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                </form>
+                <div class="social-login">
+                    <p class="divider-text">Or sign up with</p>
+                    <div class="social-buttons">
+                        <button class="social-btn google-btn">
+                            <svg width="18" height="18" viewBox="0 0 18 18">
+                                <path fill="#4285F4"
+                                    d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+                                <path fill="#34A853"
+                                    d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" />
+                                <path fill="#FBBC05"
+                                    d="M3.964 10.71c-.18-.54-.282-1.117-.282-1.71s.102-1.17.282-1.71V4.958H.957C.347 6.173 0 7.548 0 9s.348 2.827.957 4.042l3.007-2.332z" />
+                                <path fill="#EA4335"
+                                    d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
+                            </svg>
+                            Google
+                        </button>
+                        <button class="social-btn facebook-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- ===== SCRIPTS ===== -->
     <script src="/static/script.js"></script>
+
+    <!-- Account Modal Script -->
+    <script>
+        // Open account dropdown or modal
+        document.querySelector('.account-btn').addEventListener('click', function () {
+            const userEmail = localStorage.getItem('user_email');
+            const dropdown = document.getElementById('accountDropdown');
+            
+            if (userEmail) {
+                // User is logged in - show logout dropdown
+                document.getElementById('dropdownEmail').textContent = userEmail;
+                dropdown.classList.toggle('active');
+                document.getElementById('accountModal').classList.remove('active');
+            } else {
+                // User is not logged in - show login/signup modal
+                dropdown.classList.remove('active');
+                document.getElementById('accountModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            const accountBtn = document.querySelector('.account-btn');
+            const dropdown = document.getElementById('accountDropdown');
+            
+            if (!accountBtn.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Close account modal
+        function closeAccountModal() {
+            document.getElementById('accountModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on overlay click
+        document.getElementById('accountModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeAccountModal();
+            }
+        });
+
+        // Switch between login and signup tabs
+        function switchTab(tab) {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const tabs = document.querySelectorAll('.tab-btn');
+
+            tabs.forEach(btn => btn.classList.remove('active'));
+
+            if (tab === 'login') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                tabs[0].classList.add('active');
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+                tabs[1].classList.add('active');
+            }
+        }
+
+        // Handle login
+        async function handleLogin(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const email = formData.get('email');
+            const password = formData.get('password');
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email, password: password })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    localStorage.setItem('user_token', data.token);
+                    localStorage.setItem('user_email', email);
+                    alert('Login successful!');
+                    closeAccountModal();
+                    // Initialize global account UI and update dropdown email
+                    if (typeof initAccountUI === 'function') initAccountUI();
+                    document.querySelectorAll('#dropdownEmail').forEach(el => el.textContent = email);
+                } else {
+                    alert('Login failed: ' + data.message);
+                }
+            } catch (error) {
+                alert('Login error: ' + error.message);
+            }
+        }
+
+        // Handle signup
+        async function handleSignup(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const password = formData.get('password');
+            const confirmPassword = formData.get('confirmPassword');
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            const signupData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                password: password
+            };
+
+            try {
+                const response = await fetch('/api/auth/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(signupData)
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    // Store tokens
+                    localStorage.setItem('user_token', data.token);
+                    localStorage.setItem('user_email', signupData.email);
+                    localStorage.setItem('user_name', signupData.name);
+
+                    alert('Account created successfully! You are now logged in.');
+                    closeAccountModal();
+                    if (typeof initAccountUI === 'function') initAccountUI();
+                    document.querySelectorAll('#dropdownEmail').forEach(el => el.textContent = signupData.email);
+                } else {
+                    alert('Signup failed: ' + data.message);
+                }
+            } catch (error) {
+                alert('Signup error: ' + error.message);
+            }
+        }
+
+        // Account UI is handled by global script.js (initAccountUI, handleLogout)
+    </script>
 </body>
 
 </html>

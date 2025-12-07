@@ -271,36 +271,71 @@ nav a:hover::after {
 .account-btn {
   display: flex;
   align-items: center;
-  gap: 7px;
-  background: var(--white);
-  border: 1.5px solid var(--border-light);
-  border-radius: 20px;
-  padding: 7px 16px 7px 10px;
-  font-size: 0.97rem;
-  color: var(--text-dark);
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
   cursor: pointer;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: var(--transition);
   outline: none;
-  white-space: nowrap;
+  position: relative;
+}
+
+.account-btn.icon-only {
+  width: 40px;
+  height: 40px;
 }
 
 .account-btn:hover,
 .account-btn:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 2px 8px rgba(123, 163, 149, 0.08);
+  background: rgba(123, 163, 149, 0.1);
+  transform: scale(1.1);
 }
 
 .account-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   stroke: var(--primary-color);
   pointer-events: none;
+  transition: var(--transition);
+}
+
+.account-btn:hover .account-icon {
+  stroke: var(--secondary-accent);
 }
 
 .account-label {
   font-weight: 500;
   font-size: 0.97rem;
   color: var(--text-dark);
+  display: none;
+}
+
+/* Account Tooltip on Hover */
+.account-tooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text-dark);
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: var(--transition);
+  z-index: 100;
+}
+
+.account-btn:hover .account-tooltip {
+  opacity: 1;
+  visibility: visible;
+  bottom: -40px;
 }
 
 /* Mobile Menu Toggle */
@@ -2360,5 +2395,129 @@ footer {
   .quick-answers-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+/* =====================================================
+   ACCOUNT DROPDOWN MENU
+   ===================================================== */
+.account-dropdown {
+  position: fixed;
+  top: 60px;
+  right: 50px;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  min-width: 240px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.95);
+  transition: var(--transition);
+  z-index: 9998;
+}
+
+.account-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.dropdown-content {
+  padding: 16px 0;
+}
+
+.dropdown-header {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 8px;
+}
+
+.dropdown-email {
+  font-size: 13px;
+  color: var(--text-light);
+  margin: 0;
+  word-break: break-all;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background: var(--background-light);
+  padding-left: 20px;
+}
+
+.logout-btn {
+  color: var(--secondary-accent);
+}
+
+.logout-btn:hover {
+  background: rgba(227, 140, 82, 0.08);
+}
+
+.logout-btn svg {
+  flex-shrink: 0;
+}
+
+/* Responsive account dropdown */
+@media (max-width: 768px) {
+  .account-dropdown {
+    right: 30px;
+    min-width: 200px;
+    top: 50px;
+  }
+
+  .dropdown-item {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .dropdown-item:hover {
+    padding-left: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .account-dropdown {
+    right: 15px;
+    min-width: 180px;
+    top: 45px;
+  }
+
+  .dropdown-email {
+    font-size: 12px;
+  }
+
+  .dropdown-item {
+    font-size: 12px;
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .dropdown-item:hover {
+    padding-left: 14px;
   }
 }
